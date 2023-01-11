@@ -13,7 +13,7 @@ namespace pxtESP8266EJ {
     /**
     * write AT command with CR+LF ending
     */
-    //% block="Write AT command with CR+LF ending|Command (sending characters) %command|Wait (wait in ms after send) %wait"
+    //% block="Write AT command with CR+LF ending %command|Wait aftersend (ms) %wait"
     //% command.defl=AT
     //% wait.defl=100
     export function sendAT(command: string, wait: number = 100) {
@@ -25,7 +25,7 @@ namespace pxtESP8266EJ {
         /**
     * waitResponse
     */
-    //% block="waitResponse return boolean"
+    //% block="waitResponse (max 30 sec)"
     export function waitResponse(): boolean {
         let serial_str: string = ""
         let result: boolean = false
