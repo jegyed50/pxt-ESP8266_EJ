@@ -106,13 +106,22 @@ namespace pxtESP8266EJ {
                 last_upload_successful = false
                // HTTP 
                 //let str: string = "GET /update?api_key=" + write_api_key + "&field1=" + n1 + "&field2=" + n2 + "&field3=" + n3 + "&field4=" + n4 + "&field5=" + n5 + "&field6=" + n6 + "&field7=" + n7 + "&field8=" + n8
+                //HTTP sendAT("AT+CIPSEND=" + (str.length + 2))
                //HTTPS
                 // lehet, hogy hibáslet str: string = "AT+HTTPCLIENT=2,0,\"https://api.thingspeak.com/update?api_key=" + write_api_key + "&field1=" + n1 + "&field2=" + n2 + "&field3=" + n3 + "&field4=" + n4 + "&field5=" + n5 + "&field6=" + n6 + "&field7=" + n7 + "&field8=" + n8+"\"+",,,2"
                 // Beégetett
-                let str: string ="AT+HTTPCLIENT=2,0,\"https://api.thingspeak.com/update?api_key=ICPZTSAEIMBWJDTK&field8=88\",,,2"
-                //HTTP sendAT("AT+CIPSEND=" + (str.length + 2))
-               // HTTPS
-                // Minta AT+HTTPCLIENT=2,0,"https://www.espressif.com/sites/all/themes/espressif/images/about-us/solution-platform.jpg",,,2
+                let str: string ="AT+HTTPCLIENT=2,3,\"https://api.thingspeak.com/update?api_key=ICPZTSAEIMBWJDTK&field8=88\",,,2"
+                // 2 =GET
+                // 3 = text/xml
+                // 4 "https//.." = URL
+                // 5 = null = az URL paraméter felülírja
+                // 6 = path = az URL paraméter felülírja
+                // 7  = 2 = SSL (HTTPS) transport type
+                // DOC
+                //https://docs.espressif.com/projects/esp-at/en/latest/esp32/AT_Command_Set/HTTP_AT_Commands.html
+                //Syntax
+                //AT+HTTPCLIENT=<opt>,<content-type>,<"url">,[<"host">],[<"path">],<transport_type>[,<"data">][,<"http_req_header">][,<"http_req_header">][...]
+                // Minta AT+HTTPCLIENT=2,3,"https://www.espressif.com/sites/all/themes/espressif/images/about-us/solution-platform.jpg",,,2
                 //Minta2 str="AT+HTTPCLIENT=2,0,\"https://api.thingspeak.com/update?api_key=ICPZTSAEIMBWJDTK&field8=88\",,,2"
                 sendAT(str, 0) // upload data
                 last_upload_successful = waitResponse()
