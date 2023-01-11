@@ -1,0 +1,14 @@
+{
+    "name": "pxt-ESP8266_EJ",
+    "version": "0.0.3",
+    "description": "MakeCode extension for ESP8266 Wifi module",
+    "dependencies": {
+        "core": "*"
+    },
+    "files": [
+        "README.md",
+        "main.ts"
+    ],
+
+    "public": true
+}
