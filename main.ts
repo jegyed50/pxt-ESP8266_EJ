@@ -77,7 +77,7 @@ namespace pxtESP8266EJ {
     export function connectThingSpeak(ip: string, write_api_key: string, n1: number, n2: number, n3: number, n4: number, n5: number, n6: number, n7: number, n8: number) {
         if (wifi_connected && write_api_key != "") {
             thingspeak_connected = false
-            sendAT("AT+CIPSTART=\"TCP\",\"" + ip + "\",80", 0) // connect to website server
+            sendAT("AT+CIPSTART=\"TCP\",\"" + ip + "\",443", 0) // connect to website server
             thingspeak_connected = waitResponse()
             basic.pause(100)
             if (thingspeak_connected) {
