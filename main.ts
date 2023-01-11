@@ -109,9 +109,8 @@ namespace pxtESP8266EJ {
                //HTTPS
                 // lehet, hogy hibáslet str: string = "AT+HTTPCLIENT=2,0,\"https://api.thingspeak.com/update?api_key=" + write_api_key + "&field1=" + n1 + "&field2=" + n2 + "&field3=" + n3 + "&field4=" + n4 + "&field5=" + n5 + "&field6=" + n6 + "&field7=" + n7 + "&field8=" + n8+"\"+",,,2"
                 // Beégetett
-                str: string ="AT+HTTPCLIENT=2,0,\"https://api.thingspeak.com/update?api_key=ICPZTSAEIMBWJDTK&field8=88\",,,2"
-               // HTTP
-                //sendAT("AT+CIPSEND=" + (str.length + 2))
+                let str: string ="AT+HTTPCLIENT=2,0,\"https://api.thingspeak.com/update?api_key=ICPZTSAEIMBWJDTK&field8=88\",,,2"
+                //HTTP sendAT("AT+CIPSEND=" + (str.length + 2))
                // HTTPS
                 // Minta AT+HTTPCLIENT=2,0,"https://www.espressif.com/sites/all/themes/espressif/images/about-us/solution-platform.jpg",,,2
                 //Minta2 str="AT+HTTPCLIENT=2,0,\"https://api.thingspeak.com/update?api_key=ICPZTSAEIMBWJDTK&field8=88\",,,2"
