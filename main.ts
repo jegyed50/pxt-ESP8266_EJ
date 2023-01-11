@@ -2,6 +2,7 @@
  * MakeCode extension for ESP8266 Wifi modules
  */
 //% color=#009b5b icon="\uf1eb" block="ESP8266 "
+
 namespace pxtESP8266EJ {
 
     let wifi_connected: boolean = false
@@ -9,12 +10,22 @@ namespace pxtESP8266EJ {
     let last_upload_successful: boolean = false
 
     // write AT command with CR+LF ending
+    /**
+    * write AT command with CR+LF ending
+    */
+    //% block="Write AT command with CR+LF ending|Command (sending characters) %command|Wait (wait in ms after send) %wait"
+    //% command.defl=AT
+    //% wait.defl=100
     export function sendAT(command: string, wait: number = 100) {
         serial.writeString(command + "\u000D\u000A")
         basic.pause(wait)
     }
 
     // wait for certain response from ESP8266
+        /**
+    * waitResponse
+    */
+    //% block="waitResponse return boolean"
     export function waitResponse(): boolean {
         let serial_str: string = ""
         let result: boolean = false
