@@ -2,7 +2,7 @@
  * MakeCode extension for ESP8266 Wifi modules
  */
 //% color=#009b5b icon="\uf1eb" block="ESP8266 "
-namespace pxt-ESP8266_EJ {
+namespace pxtESP8266EJ {
 
     let wifi_connected: boolean = false
     let thingspeak_connected: boolean = false
