@@ -124,6 +124,7 @@ namespace pxtESP8266EJ {
                 // Minta AT+HTTPCLIENT=2,3,"https://www.espressif.com/sites/all/themes/espressif/images/about-us/solution-platform.jpg",,,2
                 //Minta2 str="AT+HTTPCLIENT=2,0,\"https://api.thingspeak.com/update?api_key=ICPZTSAEIMBWJDTK&field8=88\",,,2"
                 sendAT(str, 0) // upload data
+                sendAT("AT+CIPSEND=" + (str.length + 2))
                 last_upload_successful = waitResponse()
                 basic.pause(100)
             }
